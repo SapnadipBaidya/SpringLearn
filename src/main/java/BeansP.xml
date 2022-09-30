@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="parent" class="com.constructor.dependency.Parent" autowire="constructor">
+		<constructor-arg>
+			<!-- <bean class="com.constructor.dependency.Child" />  -->
+			<ref bean="child"/>
+			<!-- both of the above ways work the same-->
+			
+		</constructor-arg>
+		
+		
+	</bean>
+
+	<bean id="child" class="com.constructor.dependency.Child">
+    
+	</bean>
+	<bean id="child2" class="com.constructor.dependency.Child2">
+    
+	</bean>
+	
+</beans>
